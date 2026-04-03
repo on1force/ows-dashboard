@@ -74,14 +74,16 @@ If you want to contribute or run from source:
 
 3. **Build Binaries**:
    ```sh
+   mkdir -p dist
+
    # Linux (x64)
-   bun build ./src/index.tsx --compile --target=bun-linux-x64 --outfile owsd-linux-x64
+   bun build ./src/index.tsx --compile --target=bun-linux-x64 --outfile dist/owsd-linux-x64
 
    # macOS (Apple Silicon)
-   bun build ./src/index.tsx --compile --target=bun-darwin-arm64 --outfile owsd-macos-arm64
+   bun build ./src/index.tsx --compile --target=bun-darwin-arm64 --outfile dist/owsd-macos-arm64
 
    # macOS (Intel)
-   bun build ./src/index.tsx --compile --target=bun-darwin-x64 --outfile owsd-macos-x64
+   bun build ./src/index.tsx --compile --target=bun-darwin-x64 --outfile dist/owsd-macos-x64
    ```
 
 ## Requirements
