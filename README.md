@@ -84,6 +84,9 @@ If you want to contribute or run from source:
 
    # macOS (Intel)
    bun build ./src/index.tsx --compile --target=bun-darwin-x64 --outfile dist/owsd-macos-x64
+
+   # Windows (x64)
+   bun build ./src/index.tsx --compile --target=bun-windows-x64 --outfile dist/owsd-windows-x64.exe
    ```
 
 ## Requirements
