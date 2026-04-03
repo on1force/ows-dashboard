@@ -60,4 +60,86 @@ export const rootCss = css`
     font-family: "Plus Jakarta Sans", sans-serif;
     padding: 0;
   }
+
+  .nav-bar {
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    height: 64px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-box {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, var(--accent), #059669);
+    border-radius: 6px;
+  }
+
+  .brand-name {
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.025em;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .nav-link {
+    all: unset;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    color: var(--accent);
+  }
+
+  .theme-toggle {
+    all: unset;
+    cursor: pointer;
+    background: var(--background);
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sun-icon { display: block; }
+  .moon-icon { display: none; }
+  body.dark .sun-icon { display: none; }
+  body.dark .moon-icon { display: block; }
+
+  .main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
 `;
