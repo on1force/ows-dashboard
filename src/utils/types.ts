@@ -11,7 +11,40 @@ export interface OwsLog<T extends OwsOperation> {
   timestamp: string;
   wallet_id: string;
   operation: T;
-  details: T extends OwsOperation.CREATE_WALLET ? string : never;
+  chain_id?: string;
+  details: any;
+  error?: string;
+}
+
+export interface OwsKey {
+  id: string;
+  name: string;
+  token_hash: string;
+  created_at: string;
+  wallet_ids: string[];
+  policy_ids: string[];
+  expires_at: string | null;
+  wallet_secrets: Record<string, Crypto>;
+}
+
+export interface OwsPolicy {
+  id: string;
+  name: string;
+  description?: string;
+  rules: any;
+  created_at: string;
+}
+
+export interface VaultHealth {
+  path: string;
+  exists: boolean;
+  permissions: {
+    vault: string;
+    wallets: string;
+    keys: string;
+    policies: string;
+  };
+  warnings: string[];
 }
 
 export interface OwsWallet {
