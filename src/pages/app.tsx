@@ -14,7 +14,7 @@ export const App: FC<Props> = (props) => {
   >(null);
   const dialogRef = useRef<HTMLDialogElement | null>(null);
 
-  const totalLogs = Array.isArray(logs) ? logs.length : 1;
+  const totalLogs = Array.isArray(logs) ? logs.length : (logs ? 1 : 0);
 
   const openDetails = (details: OwsLog<any>["details"]) => {
     if (!dialogRef.current) return;
@@ -57,30 +57,52 @@ export const App: FC<Props> = (props) => {
       </div>
 
       <div className="logs-container">
-        <div className="logs-header">
-          <p>Time</p>
-          <p>Wallet ID</p>
-          <p>Activity</p>
-          <p>Details</p>
+        <div className="logs-header-row">
+          <span className="logs-title">Log Stream</span>
+          <span className="logs-status">Live Updates Enabled</span>
         </div>
-        <div className="logs">
-          {Array.isArray(logs) ? (
-            logs.map((log) => (
-              <div key={log.timestamp} className="log">
-                {log.timestamp}
-              </div>
-            ))
-          ) : (
-            <div className="log">
-              <p>{new Date(logs.timestamp).toLocaleString()}</p>
-              <p>{logs.wallet_id}</p>
-              <p>{logs.operation}</p>
-              <button onClick={() => openDetails(logs.details)}>
-                See Details
-              </button>
-            </div>
-          )}
-        </div>
+        
+        <table className="logs-table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Wallet ID</th>
+              <th>Activity</th>
+              <th className="text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Array.isArray(logs) ? (
+              logs.map((log) => (
+                <tr key={log.timestamp}>
+                  <td className="time-col">{new Date(log.timestamp).toLocaleTimeString()}</td>
+                  <td className="wallet-col">{log.wallet_id}</td>
+                  <td>
+                    <span className="badge success">{log.operation}</span>
+                  </td>
+                  <td className="text-right">
+                    <button className="details-btn" onClick={() => openDetails(log.details)}>
+                      Details →
+                    </button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td className="time-col">{new Date(logs.timestamp).toLocaleTimeString()}</td>
+                <td className="wallet-col">{logs.wallet_id}</td>
+                <td>
+                  <span className="badge success">{logs.operation}</span>
+                </td>
+                <td className="text-right">
+                  <button className="details-btn" onClick={() => openDetails(logs.details)}>
+                    Details →
+                  </button>
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
       </div>
     </Layout>
   );

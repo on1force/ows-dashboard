@@ -221,4 +221,93 @@ export const rootCss = css`
     font-size: 18px;
     font-weight: 700;
   }
+
+  .logs-container {
+    all: unset; /* Reset old styles */
+    display: block;
+    background-color: var(--surface);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+  }
+
+  .logs-header-row {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logs-title {
+    font-weight: 800;
+    color: var(--text-primary);
+    font-size: 16px;
+  }
+
+  .logs-status {
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .logs-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .logs-table th {
+    background-color: var(--background);
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 14px 24px;
+  }
+
+  .logs-table td {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+
+  .time-col {
+    color: var(--text-secondary);
+  }
+
+  .wallet-col {
+    font-family: monospace;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .badge.success {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--accent);
+  }
+
+  .text-right { text-align: right; }
+
+  .details-btn {
+    all: unset;
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 13px;
+    transition: opacity 0.2s;
+  }
+
+  .details-btn:hover {
+    opacity: 0.8;
+  }
 `;
