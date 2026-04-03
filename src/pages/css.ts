@@ -4,108 +4,60 @@ export const rootCss = css`
   @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
   :root {
+    --bg-zinc-50: #fafafa;
+    --bg-zinc-900: #18181b;
+    --bg-zinc-950: #09090b;
+    --text-zinc-900: #18181b;
+    --text-zinc-400: #a1a1aa;
+    --text-zinc-500: #71717a;
+    --border-zinc-200: #e4e4e7;
+    --border-zinc-800: #27272a;
+    --emerald-500: #10b981;
+    --emerald-600: #059669;
+    --emerald-700: #047857;
+
+    /* Theme-aware variables */
+    --background: var(--bg-zinc-50);
+    --surface: #ffffff;
+    --text-primary: var(--text-zinc-900);
+    --text-secondary: var(--text-zinc-500);
+    --border: var(--border-zinc-200);
+    --accent: var(--emerald-600);
+    --accent-hover: var(--emerald-700);
+    --shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+    --card-shadow: 0 10px 15px -3px rgba(0,0,0,0.04), 0 4px 6px -4px rgba(0,0,0,0.04);
+  }
+
+  body.dark {
+    --background: var(--bg-zinc-950);
+    --surface: var(--bg-zinc-900);
+    --text-primary: var(--bg-zinc-50);
+    --text-secondary: var(--text-zinc-400);
+    --border: var(--border-zinc-800);
+    --accent: var(--emerald-500);
+    --accent-hover: #34d399;
+    --shadow: none;
+    --card-shadow: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
     all: unset;
     font-family: "Plus Jakarta Sans", sans-serif;
-    font-optical-sizing: auto;
+    background-color: var(--background);
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s;
+    display: block;
+    min-height: 100vh;
+  }
+
+  /* Reset Hono/css default root if necessary */
+  :root {
+    all: unset;
+    font-family: "Plus Jakarta Sans", sans-serif;
     padding: 0;
-
-    --background-color: oklch(0.1569 0.018 195.48);
-    --primary-color: oklch(0.9969 0.005 145.54);
-    --secondary-color: oklch(0.6441 0.1712 147.39);
-    --muted-color: oklch(0.3368 0.0172 196.37);
-    --accent-color: oklch(0.5345 0.1453 145.49);
-  }
-
-  a {
-    all: unset;
-    cursor: pointer;
-  }
-
-  button {
-    all: unset;
-    cursor: pointer;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    padding: 0rem 1rem;
-    border-radius: 0.5rem;
-    height: 2.4rem;
-    width: fit-content;
-    transition:
-      background-color 0.3s,
-      color 0.3s;
-  }
-
-  button:hover {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
-  }
-
-  button:active {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-  }
-
-  .muted {
-    color: var(--muted-color);
-  }
-
-  .dark {
-    background-color: var(--background-color);
-    color: var(--primary-color);
-  }
-
-  .nav {
-    display: flex;
-    flex-direction: row;
-    padding: 1rem;
-    align-items: center;
-  }
-
-  .logo-container {
-    flex: 1;
-  }
-
-  .logo {
-    height: 2.4rem;
-    filter: invert(1);
-  }
-
-  .link-container {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  .logs-container {
-    margin: 0rem 6rem;
-    background-color: var(--muted-color);
-    border-radius: 0.5rem;
-    height: calc(100% - 15vh);
-    overflow: clip;
-  }
-
-  .logs-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 0px 1rem;
-    border-bottom: 1px solid var(--accent-color);
-  }
-
-  .logs {
-    height: 100%;
-    overflow: auto;
-  }
-
-  .log {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 0rem 1rem;
-    align-items: center;
-  }
-
-  .truncate {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 `;
