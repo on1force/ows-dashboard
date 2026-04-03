@@ -310,4 +310,71 @@ export const rootCss = css`
   .details-btn:hover {
     opacity: 0.8;
   }
+
+  .modern-dialog {
+    all: unset;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+
+  .modern-dialog[open] {
+    display: flex;
+  }
+
+  .dialog-content {
+    background: var(--surface);
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }
+
+  .dialog-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .dialog-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+  }
+
+  .close-btn {
+    all: unset;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--text-secondary);
+  }
+
+  .log-details-block {
+    padding: 24px;
+    background-color: var(--background);
+    margin: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+
+  .log-details-block pre {
+    margin: 0;
+    font-family: monospace;
+    font-size: 13px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    color: var(--text-primary);
+  }
 `;

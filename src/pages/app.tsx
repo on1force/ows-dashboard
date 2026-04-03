@@ -25,12 +25,16 @@ export const App: FC<Props> = (props) => {
 
   return (
     <Layout>
-      <dialog ref={dialogRef}>
-        <div className="log-details">
-          <p>{activeDetails}</p>
+      <dialog ref={dialogRef} className="modern-dialog">
+        <div className="dialog-content">
+          <div className="dialog-header">
+            <h3>Operation Details</h3>
+            <button className="close-btn" onClick={() => dialogRef.current?.close()}>✕</button>
+          </div>
+          <div className="log-details-block">
+            <pre>{typeof activeDetails === 'object' ? JSON.stringify(activeDetails, null, 2) : activeDetails}</pre>
+          </div>
         </div>
-
-        <button onClick={() => dialogRef.current?.close()}>Close</button>
       </dialog>
 
       <div className="dashboard-header">
