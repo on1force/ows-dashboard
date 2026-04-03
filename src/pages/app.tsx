@@ -14,6 +14,8 @@ export const App: FC<Props> = (props) => {
   >(null);
   const dialogRef = useRef<HTMLDialogElement | null>(null);
 
+  const totalLogs = Array.isArray(logs) ? logs.length : 1;
+
   const openDetails = (details: OwsLog<any>["details"]) => {
     if (!dialogRef.current) return;
 
@@ -31,15 +33,30 @@ export const App: FC<Props> = (props) => {
         <button onClick={() => dialogRef.current?.close()}>Close</button>
       </dialog>
 
-      <div className="logs-container">
-        <div
-          style={{
-            padding: "0.1rem 1rem",
-            "border-bottom": "1px solid var(--accent-color)",
-          }}
-        >
-          <h3>Activities</h3>
+      <div className="dashboard-header">
+        <h1>Activities</h1>
+        <p className="subtitle">Monitor your wallet operations in real-time</p>
+      </div>
+
+      <div className="stats-grid">
+        <div className="stat-card">
+          <span className="stat-label">Active Wallets</span>
+          <span className="stat-value">{wallets.length}</span>
         </div>
+        <div className="stat-card">
+          <span className="stat-label">Total Logs</span>
+          <span className="stat-value">{totalLogs}</span>
+        </div>
+        <div className="stat-card accent-card">
+          <span className="stat-label">System Status</span>
+          <div className="status-container">
+            <div className="status-dot"></div>
+            <span className="status-text">Operational</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="logs-container">
         <div className="logs-header">
           <p>Time</p>
           <p>Wallet ID</p>

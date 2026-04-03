@@ -142,4 +142,83 @@ export const rootCss = css`
     margin: 0 auto;
     padding: 40px 24px;
   }
+
+  .dashboard-header {
+    margin-bottom: 32px;
+  }
+
+  .dashboard-header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+  }
+
+  .dashboard-header .subtitle {
+    margin: 4px 0 0 0;
+    color: var(--text-secondary);
+    font-size: 16px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+
+  .stat-card {
+    background-color: var(--surface);
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-size: 32px;
+    font-weight: 800;
+  }
+
+  .accent-card {
+    background: linear-gradient(135deg, var(--accent), #047857);
+    color: white;
+    border: none;
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2);
+  }
+
+  .accent-card .stat-label {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .status-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.2);
+  }
+
+  .status-text {
+    font-size: 18px;
+    font-weight: 700;
+  }
 `;
