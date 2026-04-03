@@ -25,6 +25,16 @@ Then simply run:
 owsd
 ```
 
+## Tech Stack
+
+`owsd` is built to be lightweight, fast, and dependency-minimal:
+
+- **Runtime**: [Bun](https://bun.sh) for high-performance execution and built-in bundling.
+- **Web Framework**: [Hono](https://hono.dev) with JSX for type-safe, server-side rendered components.
+- **Styling**: Vanilla CSS (via `hono/css`) for zero-runtime overhead and complete design control.
+- **Language**: [TypeScript](https://www.typescriptlang.org/) for robust type safety across storage and signing logic.
+- **CLI Integration**: Native Node/Bun APIs for secure filesystem interaction and process management.
+
 ## Features
 
 - **Activity Stream**: Real-time view of signing operations, wallet creation, and broadcasts.
