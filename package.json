@@ -1,0 +1,13 @@
+{
+  "name": "ows-dashboard",
+  "scripts": {
+    "dev": "bun run --hot src/index.tsx"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.0",
+    "hono": "^4.12.10"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
