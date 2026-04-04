@@ -1,7 +1,7 @@
 {
   "name": "owsd",
-  "version": "0.1.0",
-  "description": "The Un-official dashboard for OpenWallet Standard (OWS)",
+  "version": "0.1.1",
+  "description": "The official local-first dashboard for OpenWallet Standard (OWS)",
   "main": "src/index.tsx",
   "bin": {
     "owsd": "./src/index.tsx"
