@@ -158,7 +158,7 @@ app.get("/policies", (c) => {
 console.log(`🚀 OWS Dashboard active at http://localhost:${config.port}`);
 open(`http://localhost:${config.port}`);
 
-export default {
+Bun.serve({
   port: config.port,
   fetch: app.fetch,
-};
+});
