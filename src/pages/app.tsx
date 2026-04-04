@@ -1,3 +1,4 @@
+/** @jsxImportSource hono/jsx */
 import type { FC } from "hono/jsx";
 import type { OwsLog, VaultHealth } from "../utils";
 import { Layout } from "./layout";

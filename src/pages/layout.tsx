@@ -1,3 +1,4 @@
+/** @jsxImportSource hono/jsx */
 import type { FC } from "hono/jsx";
 import { Style } from "hono/css";
 import { rootCss } from "./css";

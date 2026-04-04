@@ -1,3 +1,4 @@
+/** @jsxImportSource hono/jsx */
 import type { FC } from "hono/jsx";
 import type { OwsPolicy } from "../utils/types";
 import { Layout } from "./layout";

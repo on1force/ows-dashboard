@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+/** @jsxImportSource hono/jsx */
 import { Hono } from "hono";
 import { serveStatic } from "hono/bun";
 import { config, OwsLog, OwsWallet } from "./utils";
