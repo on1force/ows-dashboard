@@ -72,22 +72,11 @@ If you want to contribute or run from source:
    bun dev
    ```
 
-3. **Build Binaries**:
+3. **Build Multi-Platform Binaries**:
    ```sh
-   mkdir -p dist
-
-   # Linux (x64)
-   bun build ./src/index.tsx --compile --target=bun-linux-x64 --outfile dist/owsd-linux-x64
-
-   # macOS (Apple Silicon)
-   bun build ./src/index.tsx --compile --target=bun-darwin-arm64 --outfile dist/owsd-macos-arm64
-
-   # macOS (Intel)
-   bun build ./src/index.tsx --compile --target=bun-darwin-x64 --outfile dist/owsd-macos-x64
-
-   # Windows (x64)
-   bun build ./src/index.tsx --compile --target=bun-windows-x64 --outfile dist/owsd-windows-x64.exe
+   bun build
    ```
+   Builds for Linux, macOS, and Windows will be generated in the `dist/` folder.
 
 ## Requirements
 
