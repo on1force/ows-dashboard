@@ -7,11 +7,27 @@ async function main() {
     mkdirSync(distDir);
   }
 
-  const targets = [\
-    { name: "linux-x64", target: "bun-linux-x64", outfile: "dist/owsd-linux-x64" },\
-    { name: "macos-arm64", target: "bun-darwin-arm64", outfile: "dist/owsd-macos-arm64" },\
-    { name: "macos-x64", target: "bun-darwin-x64", outfile: "dist/owsd-macos-x64" },\
-    { name: "windows-x64", target: "bun-windows-x64", outfile: "dist/owsd-windows-x64.exe" },\
+  const targets = [
+    {
+      name: "linux-x64",
+      target: "bun-linux-x64",
+      outfile: "dist/owsd-linux-x64",
+    },
+    {
+      name: "macos-arm64",
+      target: "bun-darwin-arm64",
+      outfile: "dist/owsd-macos-arm64",
+    },
+    {
+      name: "macos-x64",
+      target: "bun-darwin-x64",
+      outfile: "dist/owsd-macos-x64",
+    },
+    {
+      name: "windows-x64",
+      target: "bun-windows-x64",
+      outfile: "dist/owsd-windows-x64.exe",
+    },
   ];
 
   console.log("🚀 Starting OWS Dashboard Multi-Platform Build...\n");
